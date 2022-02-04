@@ -4,5 +4,8 @@
  - Hyper-V
  - VMware
  - Oracle VirtualBox
- - Xen
-    There are two types of hypervisors. The first run on the hardware. The second run in the host OS and virtualized OS works as a guest system.
+ - Xen   
+
+There are two types of hypervisors. The first run on the hardware. The second run in the host OS and virtualized OS works as a guest system.
+
+#### PART 2. WORK WITH VIRTUALBOX
