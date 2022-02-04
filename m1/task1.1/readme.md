@@ -101,7 +101,7 @@ git checkout main
 git merge develop
 git status
 ```
-![alt text](image/image_1.png)
+![alt text](images/image_1.png)
 #### Check and save logs 
 ```
 git log
