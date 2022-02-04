@@ -1,13 +1,13 @@
 # Module 1
 ## Task 1.1
 #### Configuration
-Download and install Git on Windows https://git-scm.com/download/win
+Download and install Git on Windows [Git for Win](https://git-scm.com/download/win)
 Configure Git:
 ```
 git config --global user.name "OleksandrMakarov"
 git config --global user.email alexander.vmv@gmail.com
 ```
-Register account and create private repo on GitHub using web interface https://github.com/OleksandrMakarov/DevOps_online_IvanoFrankivsk_2022Q1Q2
+Register account and create private repo on GitHub using web interface [My repo](https://github.com/OleksandrMakarov/DevOps_online_IvanoFrankivsk_2022Q1Q2)
 Clone repo:
 ```
 git clone https://github.com/OleksandrMakarov/DevOps_online_IvanoFrankivsk_2022Q1Q2.git
@@ -101,7 +101,7 @@ git checkout main
 git merge develop
 git status
 ```
-![alt text](images/image_1.png)
+![alt text](images/screenshot_for_readme.png)
 #### Check and save logs 
 ```
 git log
@@ -113,3 +113,5 @@ git add task1.1_GIT.txt
 git commit -m "add task1.1_GIT.txt to repo"
 git push -u origin main
 ```
+
+## DevOps is
