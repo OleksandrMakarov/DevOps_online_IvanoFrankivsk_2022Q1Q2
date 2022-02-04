@@ -8,6 +8,7 @@ git config --global user.name "OleksandrMakarov"
 git config --global user.email alexander.vmv@gmail.com
 ```
 Register account and create private repo on GitHub using web interface [My repo](https://github.com/OleksandrMakarov/DevOps_online_IvanoFrankivsk_2022Q1Q2)
+
 Clone repo:
 ```
 git clone https://github.com/OleksandrMakarov/DevOps_online_IvanoFrankivsk_2022Q1Q2.git
