@@ -116,3 +116,5 @@ git push -u origin main
 ```
 
 ## DevOps is
+DevOps is the methodology which can help make development more structured and easy. Also we can automate process of development and avoid many challenges at every stage of project creation.
+DevOps is responsible for project from deploying a repository to mainteining a complited project.
