@@ -1,0 +1,18 @@
+6251de2 (HEAD -> main, origin/main, origin/develop, develop) HEAD@{0}: merge develop: Fast-forward
+61d2124 HEAD@{1}: checkout: moving from develop to main
+6251de2 (HEAD -> main, origin/main, origin/develop, develop) HEAD@{2}: commit (merge): merged and resolved the conflict
+0bdfdb5 (origin/images, images) HEAD@{3}: merge images: Fast-forward
+61969a1 HEAD@{4}: checkout: moving from styles to develop
+8fd4f91 (origin/styles, styles) HEAD@{5}: commit: change index file
+cf440e8 HEAD@{6}: checkout: moving from images to styles
+0bdfdb5 (origin/images, images) HEAD@{7}: checkout: moving from styles to images
+cf440e8 HEAD@{8}: commit: added styles file and directory
+61969a1 HEAD@{9}: checkout: moving from develop to styles
+61969a1 HEAD@{10}: checkout: moving from images to develop
+0bdfdb5 (origin/images, images) HEAD@{11}: commit: change index file
+0b0c3ad HEAD@{12}: commit: add images folder and file
+61969a1 HEAD@{13}: checkout: moving from develop to images
+61969a1 HEAD@{14}: commit: add index file
+61d2124 HEAD@{15}: checkout: moving from main to develop
+61d2124 HEAD@{16}: Branch: renamed refs/heads/main to refs/heads/main
+61d2124 HEAD@{18}: commit (initial): add readme file
