@@ -11,7 +11,7 @@
 ```
 ./VBoxManage createvm --name OleksandrVM-NB_Makarov --basefolder D:\ --ostype Ubuntu_64 --register
 ```
-Screenshot1_m2_1
+![VM created](images/Screenshot1_m2_1.png)
 ```
 ./VBoxManage modifyvm OleksandrVM-NB_Makarov --memory 2048 --vram 16 --ioapic on --graphicscontroller vmsvga
 ```
@@ -22,6 +22,32 @@ Screenshot1_m2_1
 ./VBoxManage storageattach OleksandrVM-NB_Makarov --storagectl controller --port 1 --device 0 --type hdd --medium D:\OleksandrVM-NB_Makarov\disk1.vdi --nonrotational on
 ./VBoxManage storageattach OleksandrVM-NB_Makarov --storagectl controller --port 0 --type dvddrive --medium D:\Install_Programs\ubuntu-21.10-live-server-amd64.iso
  ```
- 
+## Control VM
+```
 ./VBoxManage startvm OleksandrVM-NB_Makarov
- 
+./VBoxManage controlvm OleksandrVM-NB_Makarov reset
+./VBoxManage controlvm OleksandrVM-NB_Makarov savestate
+```
+
+## Clone and group VM
+```
+./VBoxManage clonevm OleksandrVM-NB_Makarov --name OleksandrVM-NB_Makarov_2 --basefolder d:\ --register
+./VBoxManage startvm OleksandrVM-NB_Makarov_2
+./VBoxManage controlvm OleksandrVM-NB_Makarov_2 poweroff
+./VBoxManage modifyvm "OleksandrVM-NB_Makarov" --groups "/MyGroup"
+./VBoxManage modifyvm "OleksandrVM-NB_Makarov_2" --groups "/MyGroup"
+```
+
+## Working with snapshot
+```
+./VBoxManage controlvm OleksandrVM-NB_Makarov pause
+./VBoxManage snapshot OleksandrVM-NB_Makarov take test_shapshot --uniquename Timestamp
+./VBoxManage snapshot OleksandrVM-NB_Makarov take test_shapshot_2 --description Test_snapshot_number_2 --uniquename Timestamp
+./VBoxManage snapshot OleksandrVM-NB_Makarov list --details
+```
+![snapshot tree](images/Screenshot2_m2_1.png)
+```
+./VBoxManage controlvm OleksandrVM-NB_Makarov resume
+./VBoxManage controlvm OleksandrVM-NB_Makarov poweroff
+./VBoxManage snapshot OleksandrVM-NB_Makarov restore 4f4dba30-1264-4da3-890a-9f840590d60b
+```
