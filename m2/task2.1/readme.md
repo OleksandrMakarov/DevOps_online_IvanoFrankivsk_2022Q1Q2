@@ -79,3 +79,39 @@ sudo reboot
 ![ping between VMs](images/Screenshot3_m2_1.png)
 
 ## PART 3. WORK WITH VAGRANT
+Check vagrant in the path variable
+```
+vagrant -v
+```
+```
+mkdir d:\Oleksandr_Makarov
+cd d:\Oleksandr_Makarov
+vagrant init hashicorp/precise64
+vagrant up
+```
+![screenshot with date](images/Screenshot4_m2_1.png)
+```
+vagrant halt
+vagrant destroy
+```
+#### Create own Vagrat Box
+
+Create account for Vagrant Cloud vagrantup.com
+Use this tutorial for create BaseBox https://www.vagrantup.com/docs/providers/virtualbox/boxes
+Make Vagrant box from own VM
+```
+vagrant package --base OleksandrVM-NB_Makarov_2 --output VM2.box
+```
+```
+vagrant box add VM2.box --name ubuntu20_10
+```
+Configure Vagrantfile
+```
+Vagrant.configure(2) do |config|
+config.vm.box = "ubuntu20_10"
+end
+```
+Start own VM
+```
+vagrant up
+```
