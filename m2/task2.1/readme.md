@@ -97,7 +97,9 @@ vagrant destroy
 #### Create own Vagrat Box
 
 Create account for Vagrant Cloud vagrantup.com
+
 Use this tutorial for create BaseBox https://www.vagrantup.com/docs/providers/virtualbox/boxes
+
 Make Vagrant box from own VM
 ```
 vagrant package --base OleksandrVM-NB_Makarov_2 --output VM2.box
