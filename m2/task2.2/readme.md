@@ -104,8 +104,21 @@ $ aws ecr get-login-password | docker login --username AWS --password-stdin 8723
 $ docker push 872380957844.dkr.ecr.eu-central-1.amazonaws.com/test_repo1
 # $ aws ecr delete-repository --repository-name test_repo1 --region eu-central-1 --force
 ```
-Create a cluster, and run the online demo application. CLI I will learn later ;)
+#### Create a cluster, and run the online demo application.
 ![Create a cluster](images/Screenshot5_m2_2.png)
 ![Create a task](images/Screenshot6_m2_2.png)
 
+#### Run a Serverless "Hello, World!" with AWS Lambda.
+```
+$ aws lambda create-function --function-name my-lambda --runtime python3.9 --zip-file fileb://D:\AWS\my-lambda.zip --handler my-lambda.my_handler --role arn:aws:iam::872380957844:role/service-role/MyHelloWorld-role-kum34ri1
+$ aws lambda invoke --cli-binary-format raw-in-base64-out --function-name my-lambda --payload ' { \"name\": \"Oleksandr\" } ' response.json
+```
+![Lambda function](images/Screenshot7_m2_2.png)
+
+#### Create a static website on Amazon S3, [OleksandrMakarov][makarov]
+
+
+
+
 [wp_makarov]: <http://wordpress.makarov.pp.ua/>
+[makarov]: http://makarov.pp.ua/>]
