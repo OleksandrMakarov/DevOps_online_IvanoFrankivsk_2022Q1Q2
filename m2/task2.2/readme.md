@@ -127,4 +127,4 @@ aws s3 sync . s3://makarov.pp.ua --delete --acl public-read
 
 
 [wp_makarov]: <http://wordpress.makarov.pp.ua/>
-[makarov]: http://makarov.pp.ua/>]
+[makarov]: http://makarov.pp.ua/]
