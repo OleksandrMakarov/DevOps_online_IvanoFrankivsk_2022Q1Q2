@@ -116,6 +116,12 @@ $ aws lambda invoke --cli-binary-format raw-in-base64-out --function-name my-lam
 ![Lambda function](images/Screenshot7_m2_2.png)
 
 #### Create a static website on Amazon S3, [OleksandrMakarov][makarov]
+```
+cd "D:\AWS\makarov.pp.ua"
+aws s3 mb s3://makarov.pp.ua --region eu-central-1
+aws s3 website s3://makarov.pp.ua/ --index-document index.html --error-document error.html
+aws s3 sync . s3://makarov.pp.ua --delete --acl public-read
+```
 
 
 
