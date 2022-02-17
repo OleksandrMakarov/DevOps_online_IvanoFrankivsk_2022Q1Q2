@@ -1,6 +1,6 @@
 # Module 3
-## Task 3.1
-Download *.pkt file <a id="raw-url" href="???????????????">Makarov_Task3.2</a>
+## Task 3.2
+Download *.pkt file <a id="raw-url" href="https://github.com/OleksandrMakarov/DevOps_online_IvanoFrankivsk_2022Q1Q2/raw/main/m3/task3.2/Makarov_Task3.2.pkt">Makarov_Task3.2</a>
 
 #### Create network
 ![Create a network](images/Screenshot1_m3_2.png)
@@ -20,6 +20,9 @@ When VLAN 1,2,3 were made, machines from different VLAN can not ping and tracert
 
 #### Set up routing beetween VLAN
 Create a subinterfaces
+
 ![interfaces](images/Screenshot6_m3_2.png)
+
 Ping between servers
+
 ![ping](images/Screenshot7_m3_2.png)
