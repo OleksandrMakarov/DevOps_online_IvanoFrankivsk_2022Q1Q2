@@ -13,7 +13,7 @@ Check ping and trace
 
 ![ping and tracert](images/Screenshot3_m3_3.png)
 
-#### Set up dynamic routing RIP (Routing information protocol)
+## Set up dynamic routing RIP (Routing information protocol)
 ![ISP1](images/Screenshot4_m3_3.png)
 
 #### For avoiding a conflict of dynamic routing I should change IP adresses in Data Center network to 11.D.Y.0 and subinterfaces into ISP3
