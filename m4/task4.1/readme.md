@@ -48,7 +48,7 @@ $cd
 #### Command $ls
 The **ls** command is used to list files or directories in Linux and other Unix-based operating systems.
 ![ls_1](images/Screenshot7_m4_1.png)
-**$ls -l** command to list the contents of the directory in a table format with columns including:
+**$ls -l** command to list the contents of the directory in a table format with columns
 **$ls -a** command to list files or directories including hidden files or directories.
 ![ls_2](images/Screenshot8_m4_1.png)
 #### 5) Perform the following sequence of operations:
@@ -93,5 +93,59 @@ $rm labwork2
 ```
 When try to open "symb_lnk_labwork2 file" we receive an error becouse it links to non existence file. File "hard_lnk_labwork2" opens OK.
 
+#### Command $locate
+```
+$sudo updatedb
+$locate squid
+$locate traceroute
+```
+![locate](images/Screenshot11_m4_1.png)
 
-
+#### Determine which partitions are mounted in the system, as well as the types of these partitions
+```
+$df -T -h
+or
+$df -a -T -h
+or
+$lsblk
+```
+![df, lsblk](images/Screenshot12_m4_1.png)
+#### Count the number of lines containing a given sequence of characters in a given file.
+```
+$grep -c sudo .bash_history
+```
+![grep](images/Screenshot13_m4_1.png)
+#### Using the find command, find all files in the /etc directory containing the host character sequence.
+```
+$sudo find . -name 'host*'
+```
+![find](images/Screenshot14_m4_1.png)
+#### List all objects in /etc that contain the ss character sequence. How can I duplicate a similar command using a bunch of grep?
+```
+$sudo find /etc -iname 'ss*'
+$ls | grep 'ss'
+```
+![grep](images/Screenshot15_m4_1.png)
+#### Organize a screen-by-screen print of the contents of the /etc directory. Hint: You must use stream redirection operations.
+```
+$ls -a -1 /etc >> print.txt
+```
+#### What are the types of devices and how to determine the type of device? Give examples.
+Linux supports three types of hardware device: character, block and network. **Character devices** are read and written directly without buffering, for example the system's serial ports /dev/cua0 and /dev/cua1. 
+**Block devices** can only be written to and read from in multiples of the block size, typically 512 or 1024 bytes. Block devices are accessed via the buffer cache and may be randomly accessed, that is to say, any block can be read or written no matter where it is on the device. Block devices can be accessed via their device special file but more commonly they are accessed via the file system. Only a block device can support a mounted file system. 
+**Network devices** are accessed via the BSD socket interface and the networking subsytems
+```
+$ls -l -1 /dev/
+```
+![ls](images/Screenshot16_m4_1.png)
+First character on each line specifies the device type. The symbol "b" denotes linux block devices (block), and the symbol "c" denotes character devices (character).
+#### How to determine the type of file in the system, what types of files are there?
+Command $file can be used to determine the type of file
+#### List the first 5 directory files that were recently accessed in the /etc directory.
+```
+ls -l -h -t | head -5
+```
+-l outputs in a list format
+-h makes output human readable (i.e. file sizes appear in kb, mb, etc.)
+-t sorts output by placing most recently modified file first
+![ls5](images/Screenshot17_m4_1.png)
