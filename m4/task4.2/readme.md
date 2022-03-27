@@ -74,6 +74,7 @@ $ passwd -e user_name
 sudo ls -h -a -l
 ```
 ![ls](images/Screenshot3_t4_2.png)
+
 Columns explanation:
 **The first column** gives the type of the file (e.g. directory or ordinary file) and the file permissions.
 **The second column** is the number of links to the file.
