@@ -74,6 +74,7 @@ $ passwd -e user_name
 sudo ls -h -a -l
 ```
 ![ls](images/Screenshot3_t4_2.png)
+
 Columns explanation:
 **The first column** gives the type of the file (e.g. directory or ordinary file) and the file permissions.
 **The second column** is the number of links to the file.
@@ -117,4 +118,5 @@ chmod -t test.txt
 
 #### 17) What file attributes should be present in the command script?
 **Script command** in Linux is used to make typescript or record all the terminal activities. After executing the script command it starts recording everything printed on the screen including the inputs and outputs until exit.
+
 **-rw-rw-r--** should be present in the command script. 
