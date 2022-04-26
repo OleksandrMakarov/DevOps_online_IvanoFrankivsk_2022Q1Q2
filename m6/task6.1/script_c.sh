@@ -10,4 +10,15 @@ if [ -z "$1" ] || [ -z "$2" ]
         exit 0
 fi
 
-tar -czvf $2/.$(date +%Y%m%d-%H%M%S).tar.gz $1
+rsync -azh --delete --info=del,name $1 $2 | 
+while read line; do
+    if [[ "$line" = \./ ]];
+        then continue 
+    fi;
+    if [[ "$line" =~ \deleting.* ]];
+        then
+            echo "`date +%Y-%m-%d-%T` $line"
+        else
+            echo "`date +%Y-%m-%d-%T` adding $line"
+    fi; 
+done >> script_c.log
