@@ -6,7 +6,6 @@
 3. The --target key displays a list of open system TCP ports.
 The code that performs the functionality of each of the subtasks must be placed in a separate function
 
-Download *.sh file <a id="raw-url" href="https://github.com/OleksandrMakarov/DevOps_online_IvanoFrankivsk_2022Q1Q2/blob/6fa0cc01a8358ccac61d321f41e69bb8b6fe3a51/m6/task6.1/script_a.sh">script_a.sh</a>
 <details> 
   <summary>script_a1.sh </summary>
 
