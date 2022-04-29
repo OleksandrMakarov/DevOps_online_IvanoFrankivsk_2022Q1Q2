@@ -119,9 +119,76 @@ done
 ```
 </details>
 
+
 ![output_script_b](images/Screenshot2_t6_1.png)
 
 #### C. Create a data backup script that takes the following data as parameters:
 1. Path to the syncing directory.
 2. The path to the directory where the copies of the files will be stored.
 In case of adding new or deleting old files, the script must add a corresponding entry to the log file indicating the time, type of operation and file name. [The command to run the script must be added to crontab with a run frequency of one minute]
+
+<details> 
+  <summary>script_c.sh</summary>
+  
+```
+#!/bin/bash
+function show_help {
+    echo $'Please, provide two parameters:'
+    echo $'\t Path to the syncing directory'
+    echo $'\t The path to the directory where the copies of the files will be stored.'
+}
+if [ -z "$1" ] || [ -z "$2" ]
+    then
+        show_help
+        exit 0
+fi
+
+rsync -azh --delete --info=del,name $1 $2 | 
+while read line; do
+    if [[ "$line" = \./ ]];
+        then continue 
+    fi;
+    if [[ "$line" =~ \deleting.* ]];
+        then
+            echo "`date +%Y-%m-%d-%T` $line"
+        else
+            echo "`date +%Y-%m-%d-%T` adding $line"
+    fi; 
+done >> script_c.log
+```
+</details>
+
+<details> 
+  <summary>script_c.log</summary>
+  
+```
+2022-04-27-11:24:01 adding CV_DevOps(6)_Od_Oleksandr_Makarov.pdf
+2022-04-27-11:24:01 adding Lecture 5.3 Network security basics.pdf
+2022-04-27-11:24:02 adding Rebekka Hunter - part 1 task 9-11.pdf
+2022-04-27-11:24:02 adding Task 5.pdf
+2022-04-27-11:24:02 adding Task6.1.pdf
+2022-04-27-11:24:02 adding Use of English B2 for all exames TB_OCR MCR.pdf
+2022-04-27-11:24:03 adding image_2020_05_01T05_44_06_629Z.png
+2022-04-27-11:24:03 adding part 1 task 3, 4, 51477258.pdf
+2022-04-27-11:24:03 adding part 1 task 7, 8.pdf
+2022-04-27-11:26:01 adding CV_DevOps(6)_Od_Oleksandr_Makarov.pdf
+2022-04-27-11:26:01 adding Lecture 5.3 Network security basics.pdf
+2022-04-27-11:26:01 adding Rebekka Hunter - part 1 task 9-11.pdf
+2022-04-27-11:26:01 adding Task 5.pdf
+2022-04-27-11:26:01 adding Task6.1.pdf
+2022-04-27-11:26:01 adding Use of English B2 for all exames TB_OCR MCR.pdf
+2022-04-27-11:26:02 adding image_2020_05_01T05_44_06_629Z.png
+2022-04-27-11:26:02 adding part 1 task 3, 4, 51477258.pdf
+2022-04-27-11:26:02 adding part 1 task 7, 8.pdf
+2022-04-27-12:08:01 deleting SplitCamSetup_x64.msi
+2022-04-27-12:08:01 deleting OneDrive_2022-04-19.zip
+2022-04-27-12:08:01 deleting ManyCamSetup.exe
+2022-04-27-12:12:02 adding ManyCamSetup.exe
+2022-04-27-12:12:07 adding OneDrive_2022-04-19.zip
+2022-04-27-12:18:01 deleting 02370887447_FS-365492_22_MEPL1_04_fv.pdf
+2022-04-27-12:18:01 deleting 02312914405_FS-376596_22_MEPL1_04_fv.pdf
+2022-04-27-12:18:01 adding ManyCamSetup.exe
+2022-04-27-12:18:07 adding OneDrive_2022-04-19.zip
+
+```
+</details>
