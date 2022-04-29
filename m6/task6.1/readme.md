@@ -192,3 +192,10 @@ done >> script_c.log
 
 ```
 </details>
+
+
+Cron settings:
+
+![cron_script_c1](images/Screenshot3_t6_1.png)
+
+![cron_script_c2](images/Screenshot4_t6_1.png)
