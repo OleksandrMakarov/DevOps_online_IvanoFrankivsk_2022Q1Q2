@@ -154,3 +154,74 @@ mysql> REVOKE INSERT ON test_db.* FROM 'oleksandr'@'%';
 #### 9. Make a selection from the main table DB MySQL.
 
 ![selection](images/Screenshot6_t7_1.png)
+
+## Part 2
+#### 10. Make backup of your database.
+```
+$mysqldump -u root -p test_db > backup_test_db.sql
+```
+#### 11. Delete the table and/or part of the data in the table.
+```
+mysql> drop table test_db.CARS
+```
+#### 12. Restore your database.
+```
+$mysql -u root -p test_db < backup_test_db.sql
+```
+![restore_db](images/Screenshot7_t7_1.png)
+
+#### 13. Transfer your local database to RDS AWS.
+
+![rds_dashboard](images/Screenshot8_t7_1.png)
+
+```
+$mysql -u admin -p -h database-1.cdyxjennwazt.eu-central-1.rds.amazonaws.com
+mysql> CREATE SCHEMA IF NOT EXISTS `test_db` DEFAULT CHARACTER SET utf8mb4 ;
+mysql> exit
+$mysql -u admin -p -h database-1.cdyxjennwazt.eu-central-1.rds.amazonaws.com -D test_db < backup_test_db.sql
+```
+
+![rds_migration](images/Screenshot9_t7_1.png)
+
+#### 14. Connect to your database.
+```
+mysql -u admin -p -h database-1.cdyxjennwazt.eu-central-1.rds.amazonaws.com
+mysql> use test_db;
+mysql> show tables;
+```
+#### 15. Execute SELECT operator similar step 6.
+
+![similar_step_6](images/Screenshot10_t7_1.png)
+
+#### 16. Create the dump of your database.
+```
+mysqldump -u admin -p -h database-1.cdyxjennwazt.eu-central-1.rds.amazonaws.com test_db > RDS_backup_test_db.sql
+```
+
+## PART 3 - MongoDB
+#### 17. Create a database. Use the use command to connect to a new database (If it doesn't exist, Mongo will create it when you write to it).
+```
+$sudo apt install ./mongodb-mongosh_1.3.1_amd64.deb
+$mongosh "mongodb+srv://cluster0.prdnt.mongodb.net/myFirstDatabase" --apiVersion 1 --username admin
+
+mongosh> show dbs
+mongosh> use test_mongo
+```
+#### 18. Create a collection.
+```
+test_mongo> db.createCollection('colors')
+```
+
+![createCollection](images/Screenshot11_t7_1.png)
+
+#### 19. Create some documents. Insert a couple of documents into your collection.
+```
+test_mongo> db.colors.insertOne({hex: "#fc0303", name: "red"});
+test_mongo> db.colors.insertMany([{hex: "#00ff00", name: "green"}, {hex: "#0000ff", name: "blue"}]);
+```
+#### 20. Use find() to list documents out.
+```
+test_mongo> db.colors.find()
+```
+
+![find()](images/Screenshot12_t7_1.png)
